@@ -13,7 +13,7 @@ class Pesankamar extends CI_Controller
 
       $this->form_validation->set_rules('nama_pemesan', 'Nama pemesan', 'required');
       $this->form_validation->set_rules('jk', 'Jenis kelamin', 'required');
-      $this->form_validation->set_rules('nomor_identitas', 'Nomor identitas', 'required|max_length[1]|min_length[1]');
+      $this->form_validation->set_rules('nomor_identitas', 'Nomor identitas', 'required|max_length[16]|min_length[16]');
       $this->form_validation->set_rules('tipe_kamar', 'Tipe kamar', 'required');
       $this->form_validation->set_rules('tanggal_pesan', 'Tanggal pesan', 'required');
       $this->form_validation->set_rules('durasi_menginap', 'Durasi menginap', 'required');

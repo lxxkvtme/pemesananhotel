@@ -20,7 +20,7 @@
                     <a href="<?= base_url() ?>Welcome">Produk</a>
                     <a href="<?= base_url() ?>Welcome/listHarga">Daftar Harga</a>
                     <a href="<?= base_url() ?>Welcome/tentangHotel">Tentang Kami</a>
-                    <a href="#">Pesan Kamar</a>
+                    <a href="<?= base_url() ?>PesanKamar">Pesan Kamar</a>
                 </div>
             </div>
         </div>
