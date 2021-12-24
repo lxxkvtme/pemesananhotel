@@ -21,6 +21,22 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->view('pages/pesankamar');
+		$data['title'] = 'Produk Kamar Hotel';
+		$this->load->view('components/header', $data);
+		$this->load->view('pages/index');
+	}
+
+	function listHarga()
+	{
+		$data['title'] = 'Harga Kamar Hotel';
+		$this->load->view('components/header', $data);
+		$this->load->view('pages/daftarharga');
+	}
+
+	function tentangHotel()
+	{
+		$data['title'] = 'Tentang Hotel';
+		$this->load->view('components/header', $data);
+		$this->load->view('pages/tentangkami');
 	}
 }
