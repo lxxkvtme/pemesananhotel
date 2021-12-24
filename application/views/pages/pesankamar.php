@@ -11,61 +11,50 @@
 <body>
     <section>
         <div>
-            <form>
+            <form method="post" action="<?= base_url() ?>Welcome/addProduk">
                 <div>
                     <div>
-                        <label for="">Nama Pemesanan</label>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <label for="">jenis Kelamin</label>
-                        <div>
-                            <input type="radio" name="" id="">Laki-laki
-                            <input type="radio" name="" id="">Perempuan
-                        </div>
-                    </div>
-                    <div>
-                        <label for="">Nomor Identitas</label>
-                        <input type="text">
-                    </div>
-                    <div>
                         <label for="">Tipe Kamar</label>
-                        <select name="" id="">
+                        <select name="" id="pilihJenisKamar" onChange='pilih()'>
                             <option value="" disabled selected>Pilih Jenis Kamar</option>
-                            <option value="">STANDAR</option>
-                            <option value="">DELUXE</option>
-                            <option value="">FAMILY</option>
+                            <option value="standar">STANDAR</option>
+                            <option value="deluxe">DELUXE</option>
+                            <option value="family">FAMILY</option>
                         </select>
                     </div>
                     <div>
                         <label for="">Harga</label>
-                        <input type="number" disabled>
+                        <input type="number" name="harga" id="harga" readonly>
                     </div>
                     <div>
-                        <label for="">Tanggal Pesan</label>
-                        <input type="date">
+                        <button type="button">Hitung Total Bayar</button>
+                        <button type="submit">Simpan</button>
+                        <button type="reset">Batal</button>
                     </div>
-                    <div>
-                        <label for="">Durasi Menginap</label>
-                        <input type="number">
-                    </div>
-                    <div>
-                        <label for="">Termasuk Breakfest</label>
-                        <input type="checkbox" name="" id="">Ya
-                    </div>
-                    <div>
-                        <label for="">Total bayar</label>
-                        <input type="number" disabled>
-                    </div>
-                </div>
-                <div>
-                    <button type="button">Hitung Total Bayar</button>
-                    <button type="submit">Simpan</button>
-                    <button type="reset">Batal</button>
-                </div>
             </form>
         </div>
     </section>
+
+    <script>
+        function pilih() {
+            let pilih = document.getElementById('pilihJenisKamar')
+            let hasil = pilih.options[pilih.selectedIndex]
+
+            if (hasil.value == 'standar') {
+                document.getElementById('harga').value = 500000
+            } else if (hasil.value == 'deluxe') {
+                document.getElementById('harga').value = 600000
+            } else if (hasil.value == 'family') {
+                document.getElementById('harga').value = 700000
+            } else {
+                document.getElementById('harga').value = null
+            }
+
+            console.log(hasil.value)
+        }
+
+        pilih()
+    </script>
 </body>
 
 </html>
