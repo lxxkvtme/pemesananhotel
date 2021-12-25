@@ -5,8 +5,8 @@
 }
 
 .navbar {
-	backdrop-filter: blur(2px);
-	background-color: rgb(255, 255, 255, 0.7);
+	backdrop-filter: blur(5px);
+	background-color: rgb(255, 255, 255, 0.6);
 	border-radius: 0 0 20px 20px;
 	box-shadow: 0px 15px 35px 3px rgba(0, 0, 0, 0.21);
 	-webkit-box-shadow: 0px 15px 35px 3px rgba(0, 0, 0, 0.21);
@@ -53,10 +53,10 @@
 }
 
 .item {
-	backdrop-filter: blur(2px);
+	backdrop-filter: blur(5px);
 	border-radius: 20px;
 	padding: 30px;
-	background-color: rgb(255, 255, 255, 0.7);
+	background-color: rgb(255, 255, 255, 0.6);
 	border: 0.5px solid white;
 	display: flex;
 	flex-direction: column;
@@ -87,7 +87,7 @@
 	border: 0.5px solid #fff;
 }
 
-.item table th,
+.item table.harga th,
 td {
 	padding: 10px;
 	font-size: 15pt;
@@ -111,4 +111,107 @@ td {
 
 .deskripsi p {
 	font-size: 12pt;
+}
+
+.form,
+.resi {
+	display: flex;
+	justify-content: center;
+}
+
+form {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+form .isian {
+	width: 33vw;
+}
+
+.form-control {
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.form-control label {
+	width: 11vw;
+	font-size: 14pt;
+}
+
+.form-control .input {
+	margin-left: 20px;
+	width: 15vw;
+}
+
+.input input[type="text"],
+#nomor_identitas,
+#harga_kamar,
+input[type="number"],
+input[type="date"],
+select {
+	width: 100%;
+	padding: 10px 10px;
+	border-radius: 10px;
+	border: 0.5px solid rgb(90, 90, 90);
+	font-size: 12pt;
+}
+
+#durasi_menginap {
+	width: 20%;
+	margin-right: 5px;
+}
+
+input:read-only {
+	background-color: rgb(214, 213, 213);
+}
+
+.input input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 5px;
+	margin-left: 10px;
+	width: 2vh;
+}
+
+.tombol {
+	display: flex;
+	flex-direction: column;
+}
+
+button,
+.button {
+	padding: 10px 30px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	border-radius: 15px;
+	border: 1px solid rgb(218, 218, 218);
+	color: #fff;
+	font-size: 12pt;
+}
+
+button[type="button"],
+.button {
+	background-color: rgb(61, 164, 233);
+}
+
+button[type="submit"] {
+	background-color: rgb(73, 226, 132);
+}
+
+button[type="reset"] {
+	background-color: rgb(212, 33, 33);
+}
+
+.item table.hasil tr td {
+	text-align: left;
+}
+
+.item table.hasil {
+	margin-bottom: 20px;
+}
+
+.hasil .bold {
+	font-weight: 600;
 }

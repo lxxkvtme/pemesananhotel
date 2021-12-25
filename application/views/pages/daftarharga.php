@@ -2,7 +2,7 @@
     <div class="daftarharga">
         <div class="item">
             <h1>List Harga Kamar</h1>
-            <table border="1">
+            <table border="1" class="harga">
                 <tr>
                     <th>Nama</th>
                     <th>Harga</th>

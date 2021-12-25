@@ -5,12 +5,13 @@ class Pesankamar extends CI_Controller
 {
    public function index()
    {
+      $data['title'] = 'Pesan Kamar';
+      $this->load->view('components/header', $data);
       $this->load->view('pages/pesankamar');
    }
 
    public function addPemesanan()
    {
-
       $this->form_validation->set_rules('nama_pemesan', 'Nama pemesan', 'required');
       $this->form_validation->set_rules('jk', 'Jenis kelamin', 'required');
       $this->form_validation->set_rules('nomor_identitas', 'Nomor identitas', 'required|max_length[16]|min_length[16]');
@@ -20,7 +21,7 @@ class Pesankamar extends CI_Controller
 
       if ($this->form_validation->run() == false) {
          $this->session->set_flashdata('flash');
-         $this->load->view('pages/pesankamar');
+         $this->index();
       } else {
          $data['nama_pemesan'] = $this->input->post('nama_pemesan');
          $data['jk'] = $this->input->post('jk');
@@ -33,9 +34,10 @@ class Pesankamar extends CI_Controller
          $data['total_bayar'] = $this->input->post('total_bayar');
          $data['diskon'] = $this->input->post('diskon');
 
-         // var_dump($data);
+
+         $data['title'] = 'Hasil Pesanan';
+         $this->load->view('components/header', $data);
          $this->load->view('pages/hasilpesanan', $data);
-         // haloo
       }
    }
 }
